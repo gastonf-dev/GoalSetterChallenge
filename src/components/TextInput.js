@@ -23,17 +23,35 @@ type Props = {
   label: string,
   placeholder: string,
   type: 'person' | 'email' | 'password',
+  value: string,
+  handleChange: function,
+  handleBlur: function,
+  error: string,
+  touched: boolean,
+  name: string,
 };
 
-const TextInput = ({label, placeholder, type}: Props): Node => {
+const TextInput = ({
+  label,
+  placeholder,
+  type,
+  handleBlur,
+  handleChange,
+  value,
+  name,
+  error,
+  touched,
+}: Props): Node => {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState('');
 
   return (
     <View
       style={[
         styles.container,
         isFocused ? {borderBottomColor: COLORS.lightblue} : null,
+        (type == 'email' || type == 'password') && error && touched
+          ? {borderBottomColor: COLORS.red}
+          : null,
       ]}>
       <Image source={ICONS[type]} style={styles.icon} />
       <View style={styles.textInputContainer}>
@@ -44,9 +62,12 @@ const TextInput = ({label, placeholder, type}: Props): Node => {
           style={styles.textInput}
           placeholder={isFocused ? undefined : placeholder}
           onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
+          onBlur={event => {
+            setIsFocused(false);
+            handleBlur(event);
+          }}
           secureTextEntry={type === 'password'}
-          onChangeText={setValue}
+          onChangeText={handleChange}
           value={value}
         />
       </View>
@@ -75,6 +96,7 @@ const styles = StyleSheet.create({
   textInput: {
     fontSize: 14,
     color: COLORS.lightblue,
+    width: '100%',
   },
   label: {
     fontSize: 10,
