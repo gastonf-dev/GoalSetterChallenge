@@ -4,11 +4,24 @@
  */
 import React from 'react';
 import type {Node} from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 
 import TextInput from '../components/TextInput';
+import Button from '../components/Button';
+import COLORS from '../styles/Colors';
+import Link from '../components/Link';
 
 const FORM_SCHEMA = Yup.object().shape({
   firstname: Yup.string().required('Required'),
@@ -24,9 +37,20 @@ const FORM_INITIAL_VALUES = {
   password: '',
 };
 
+const IMAGE_HEADER = require('../assets/images/background.png');
+
 const Form = (): Node => {
   return (
-    <View>
+    <KeyboardAwareScrollView>
+      <View>
+        <ImageBackground source={IMAGE_HEADER} style={styles.imageHeader}>
+          <Text style={styles.title}>Create Your Account</Text>
+          <Text style={styles.subtitle}>
+            You can be a parent, godparent, grandparent or even a favorite aunt.
+            We’ll add the kids after!
+          </Text>
+        </ImageBackground>
+      </View>
       <Formik
         initialValues={FORM_INITIAL_VALUES}
         onSubmit={values => console.log('values', values)}
@@ -41,7 +65,10 @@ const Form = (): Node => {
           setFieldValue,
           setFieldTouched,
           isValid,
+          dirty,
         }) => {
+          console.log('🚀 ~ file: Form.js ~ line 69 ~ Form ~ dirty', dirty);
+          console.log('🚀 ~ file: Form.js ~ line 68 ~ Form ~ isValid', isValid);
           return (
             <View style={styles.formContainer}>
               <TextInput
@@ -92,19 +119,70 @@ const Form = (): Node => {
                 name="password"
               />
 
-              <Button
-                title="Submit"
-                onPress={handleSubmit}
-                disabled={!isValid}
-              />
+              <View style={styles.bottomContainer}>
+                <View style={styles.adviceContainer}>
+                  <Text style={styles.adviceText}>
+                    By creating this account, I agree that I am a U.S. resident,
+                    18 years or older with a valid bank account. I agree to
+                    Goalsetter’s
+                    <Link
+                      title="Terms of Service"
+                      onPress={() => console.log('link on press')}
+                    />
+                  </Text>
+                </View>
+                <Button
+                  title="CREATE FREE ACCOUNT"
+                  onPress={() => console.log('button on press')}
+                  disabled={!(isValid && dirty)}
+                />
+              </View>
             </View>
           );
         }}
       </Formik>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 
 export default Form;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  imageHeader: {
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    padding: 24,
+  },
+  title: {
+    fontFamily: 'AvenirLTStd',
+    fontWeight: 'bold',
+    fontSize: 20,
+    lineHeight: 24,
+    textAlign: 'center',
+    color: 'white',
+    marginVertical: 12,
+  },
+  subtitle: {
+    fontFamily: 'AvenirLTStd',
+    fontSize: 14,
+    lineHeight: 16,
+    textAlign: 'center',
+    color: 'white',
+  },
+  formContainer: {
+    flex: 1,
+  },
+  bottomContainer: {
+    flex: 1,
+  },
+  adviceContainer: {
+    marginHorizontal: 24,
+  },
+  adviceText: {
+    fontFamily: 'AvenirLTStd',
+    fontSize: 14,
+    textAlign: 'center',
+    opacity: 0.4,
+  },
+ 
+});

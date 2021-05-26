@@ -10,13 +10,7 @@ import {SafeAreaView, ScrollView} from 'react-native';
 import Form from './src/screens/Form';
 
 const App: () => Node = () => {
-  return (
-    <SafeAreaView>
-      <ScrollView>
-        <Form />
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <Form />;
 };
 
 export default App;
