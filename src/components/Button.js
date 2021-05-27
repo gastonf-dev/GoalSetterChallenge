@@ -1,3 +1,8 @@
+/**
+ * @flow stric-local
+ * @format
+ */
+
 import React from 'react';
 import type {Node} from 'react';
 
@@ -12,16 +17,18 @@ import COLORS from '../styles/Colors';
 type Props = {
   title: string,
   onPress: function,
-  disabled: boolean,
+  disabled?: boolean,
+  large?: boolean,
 };
 
-const Button = ({title, onPress, disabled}: Props): Node => {
+const Button = ({title, onPress, disabled, large}: Props): Node => {
   return (
     <>
       <TouchableOpacity
         style={[
           styles.button,
           disabled ? {backgroundColor: COLORS.gray} : null,
+          large ? {width: '90%'} : null,
         ]}
         onPress={onPress}
         disabled={disabled}>

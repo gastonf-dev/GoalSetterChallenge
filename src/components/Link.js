@@ -1,4 +1,10 @@
+/**
+ * @flow stric-local
+ * @format
+ */
+
 import React from 'react';
+import type {Node} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import COLORS from '../styles/Colors';
 
@@ -6,7 +12,7 @@ type Props = {
   title: string,
   onPress: function,
 };
-const Link = ({title, onPress}: Props) => {
+const Link = ({title, onPress}: Props): Node => {
   return (
     <Text style={styles.link} onPress={onPress}>
       {title}

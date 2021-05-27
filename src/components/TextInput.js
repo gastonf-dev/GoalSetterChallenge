@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: COLORS.gray,
     marginHorizontal: 38,
-    marginVertical: 16,
+    marginVertical: 6,
     // Apply fontFamily to all nest components
     fontFamily: 'AvenirLTStd',
     fontWeight: 'bold',
