@@ -22,12 +22,14 @@ import TextInput from '../components/TextInput';
 import Button from '../components/Button';
 import COLORS from '../styles/Colors';
 import Link from '../components/Link';
+import {useNavigation} from '@react-navigation/core';
+import Header from '../components/Header';
 
 const FORM_SCHEMA = Yup.object().shape({
-  firstname: Yup.string().required('Required'),
-  lastname: Yup.string().required('Required'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string().min(4, 'Too Short!').required('Required'),
+  firstname: Yup.string().required(),
+  lastname: Yup.string().required(),
+  email: Yup.string().email().required(),
+  password: Yup.string().min(4).required(),
 });
 
 const FORM_INITIAL_VALUES = {
@@ -37,20 +39,14 @@ const FORM_INITIAL_VALUES = {
   password: '',
 };
 
-const IMAGE_HEADER = require('../assets/images/background.png');
-
 const Form = (): Node => {
+  const navigation = useNavigation();
   return (
     <KeyboardAwareScrollView>
-      <View>
-        <ImageBackground source={IMAGE_HEADER} style={styles.imageHeader}>
-          <Text style={styles.title}>Create Your Account</Text>
-          <Text style={styles.subtitle}>
-            You can be a parent, godparent, grandparent or even a favorite aunt.
-            We’ll add the kids after!
-          </Text>
-        </ImageBackground>
-      </View>
+      <Header
+        title="Create Your Account"
+        subtitle="You can be a parent, godparent, grandparent or even a favorite aunt. We’ll add the kids after!"
+      />
       <Formik
         initialValues={FORM_INITIAL_VALUES}
         onSubmit={values => console.log('values', values)}
@@ -127,13 +123,13 @@ const Form = (): Node => {
                     Goalsetter’s
                     <Link
                       title="Terms of Service"
-                      onPress={() => console.log('link on press')}
+                      onPress={() => navigation.navigate('TermsOfService')}
                     />
                   </Text>
                 </View>
                 <Button
                   title="CREATE FREE ACCOUNT"
-                  onPress={() => console.log('button on press')}
+                  onPress={() => navigation.navigate('LinkBank')}
                   disabled={!(isValid && dirty)}
                 />
               </View>
@@ -148,27 +144,6 @@ const Form = (): Node => {
 export default Form;
 
 const styles = StyleSheet.create({
-  imageHeader: {
-    resizeMode: 'cover',
-    justifyContent: 'center',
-    padding: 24,
-  },
-  title: {
-    fontFamily: 'AvenirLTStd',
-    fontWeight: 'bold',
-    fontSize: 20,
-    lineHeight: 24,
-    textAlign: 'center',
-    color: 'white',
-    marginVertical: 12,
-  },
-  subtitle: {
-    fontFamily: 'AvenirLTStd',
-    fontSize: 14,
-    lineHeight: 16,
-    textAlign: 'center',
-    color: 'white',
-  },
   formContainer: {
     flex: 1,
   },
@@ -184,5 +159,4 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     opacity: 0.4,
   },
- 
 });
