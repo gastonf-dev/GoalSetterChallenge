@@ -2,7 +2,7 @@
  * @flow stric-local
  * @format
  */
-import React from 'react';
+import React, {useEffect} from 'react';
 import type {Node} from 'react';
 
 import {Image, StyleSheet, Text, View} from 'react-native';
@@ -10,9 +10,21 @@ import Header from '../components/Header';
 import COLORS from '../styles/Colors';
 import Button from '../components/Button';
 
+import {useNavigation} from '@react-navigation/core';
+
 const IMAGE_BANK = require('../assets/images/bank.png');
 
 const LinkBank = (): Node => {
+  const navigation = useNavigation();
+
+  // disable back button
+  useEffect(() => {
+    navigation.addListener('beforeRemove', e => {
+      e.preventDefault();
+      return;
+    });
+  }, [navigation]);
+
   return (
     <View>
       <Header title="Link your bank!" />
