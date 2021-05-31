@@ -50,6 +50,7 @@ const Form = (): Node => {
     setIsLoading(true);
     const result = await addParentApi(values);
     setIsLoading(false);
+    navigation.navigate("LinkBank");
   };
 
   if (isLoading) {
