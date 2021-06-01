@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Link /> render link 1`] = `
+<Text
+  onPress={[MockFunction]}
+  style={
+    Object {
+      "color": "#17BFDD",
+      "fontFamily": "AvenirLTStd",
+      "fontSize": 14,
+    }
+  }
+  testID="link"
+>
+  Test link
+</Text>
+`;

@@ -14,7 +14,7 @@ type Props = {
 };
 const Link = ({title, onPress}: Props): Node => {
   return (
-    <Text style={styles.link} onPress={onPress}>
+    <Text style={styles.link} onPress={onPress} testID="link">
       {title}
     </Text>
   );
