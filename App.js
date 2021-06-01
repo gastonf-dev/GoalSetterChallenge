@@ -22,13 +22,13 @@ function App() {
           screenOptions={{
             headerBackTitleVisible: false,
           }}>
-          {/* <Stack.Screen
+          <Stack.Screen
             name="Form"
             component={Form}
             options={{
               headerShown: false,
             }}
-          /> */}
+          />
           <Stack.Screen
             name="LinkBank"
             component={LinkBank}
