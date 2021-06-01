@@ -84,61 +84,63 @@ const Form = (): Node => {
             dirty,
           }) => {
             return (
-              <View style={styles.formContainer}>
-                <TextInput
-                  label="First name"
-                  placeholder="First name"
-                  type="person"
-                  value={values.firstname}
-                  handleChange={handleChange('firstname')}
-                  handleBlur={handleBlur('firstname')}
-                  error={errors.firstname}
-                  touched={touched.firstname}
-                  name="firstname"
-                />
+              <View style={styles.container}>
+                <View style={styles.formContainer}>
+                  <TextInput
+                    label="First name"
+                    placeholder="First name"
+                    type="person"
+                    value={values.firstname}
+                    handleChange={handleChange('firstname')}
+                    handleBlur={handleBlur('firstname')}
+                    error={errors.firstname}
+                    touched={touched.firstname}
+                    name="firstname"
+                  />
 
-                <TextInput
-                  label="Last name"
-                  placeholder="Last name"
-                  type="person"
-                  value={values.lastname}
-                  handleChange={handleChange('lastname')}
-                  handleBlur={handleBlur('lastname')}
-                  error={errors.lastname}
-                  touched={touched.lastname}
-                  name="lastname"
-                />
+                  <TextInput
+                    label="Last name"
+                    placeholder="Last name"
+                    type="person"
+                    value={values.lastname}
+                    handleChange={handleChange('lastname')}
+                    handleBlur={handleBlur('lastname')}
+                    error={errors.lastname}
+                    touched={touched.lastname}
+                    name="lastname"
+                  />
 
-                <TextInput
-                  label="Email"
-                  placeholder="Email"
-                  type="email"
-                  value={values.email}
-                  handleChange={handleChange('email')}
-                  handleBlur={handleBlur('email')}
-                  error={errors.email}
-                  touched={touched.email}
-                  name="email"
-                />
+                  <TextInput
+                    label="Email"
+                    placeholder="Email"
+                    type="email"
+                    value={values.email}
+                    handleChange={handleChange('email')}
+                    handleBlur={handleBlur('email')}
+                    error={errors.email}
+                    touched={touched.email}
+                    name="email"
+                  />
 
-                <TextInput
-                  label="Password"
-                  placeholder="Password"
-                  type="password"
-                  value={values.password}
-                  handleChange={handleChange('password')}
-                  handleBlur={handleBlur('password')}
-                  error={errors.password}
-                  touched={touched.password}
-                  name="password"
-                />
+                  <TextInput
+                    label="Password"
+                    placeholder="Password"
+                    type="password"
+                    value={values.password}
+                    handleChange={handleChange('password')}
+                    handleBlur={handleBlur('password')}
+                    error={errors.password}
+                    touched={touched.password}
+                    name="password"
+                  />
+                </View>
 
                 <View style={styles.bottomContainer}>
                   <View style={styles.adviceContainer}>
                     <Text style={styles.adviceText}>
                       By creating this account, I agree that I am a U.S.
                       resident, 18 years or older with a valid bank account. I
-                      agree to Goalsetter’s
+                      agree to Goalsetter’s {'\b'}
                       <Link
                         title="Terms of Service"
                         onPress={() => navigation.navigate('TermsOfService')}
