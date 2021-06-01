@@ -20,7 +20,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 
 import TextInput from '../components/TextInput';
-import Button from '../components/Button';
+import Button from '../components/button/Button';
 import COLORS from '../styles/Colors';
 import Link from '../components/Link';
 import {useNavigation} from '@react-navigation/core';
@@ -147,7 +147,7 @@ const Form = (): Node => {
                   <Button
                     title="CREATE FREE ACCOUNT"
                     onPress={handleSubmit}
-                    // disabled={!(isValid && dirty)}
+                    disabled={!(isValid && dirty)}
                   />
                 </View>
               </View>

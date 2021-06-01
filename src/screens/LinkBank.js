@@ -8,7 +8,7 @@ import type {Node} from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import Header from '../components/Header';
 import COLORS from '../styles/Colors';
-import Button from '../components/Button';
+import Button from '../components/button/Button';
 
 import {useNavigation} from '@react-navigation/core';
 

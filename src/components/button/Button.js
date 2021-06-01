@@ -12,7 +12,7 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
-import COLORS from '../styles/Colors';
+import COLORS from '../../styles/Colors';
 
 type Props = {
   title: string,
@@ -31,7 +31,8 @@ const Button = ({title, onPress, disabled, large}: Props): Node => {
           large ? {width: '90%'} : null,
         ]}
         onPress={onPress}
-        disabled={disabled}>
+        disabled={disabled}
+        testID="button">
         <Text style={styles.buttonText}>{title}</Text>
       </TouchableOpacity>
     </>
