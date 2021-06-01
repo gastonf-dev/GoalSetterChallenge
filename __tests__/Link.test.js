@@ -5,10 +5,10 @@ import {render, fireEvent, waitFor} from '@testing-library/react-native';
 import Link from '../src/components/Link';
 
 describe('<Link />', () => {
-  const PROPS = {title: 'Test link', onPress: jest.fn()};
-  const wrapper = renderer.create(<Link {...PROPS} />);
-
   test('render link', () => {
+    const PROPS = {title: 'Test link', onPress: jest.fn()};
+    const wrapper = renderer.create(<Link {...PROPS} />);
+
     expect(wrapper).toMatchSnapshot();
   });
 
