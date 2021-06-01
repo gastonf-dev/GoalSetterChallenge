@@ -70,6 +70,8 @@ const TextInput = ({
           secureTextEntry={type === 'password'}
           onChangeText={handleChange}
           value={value}
+          keyboardType={type === 'email' ? 'email-address' : 'default'}
+          autoCapitalize={type === 'email' ? 'none' : 'words'}
         />
       </View>
     </View>
@@ -86,23 +88,24 @@ const styles = StyleSheet.create({
     borderBottomColor: COLORS.gray,
     marginHorizontal: 38,
     marginVertical: 12,
-
-    paddingVertical: 6,
-    // Apply fontFamily to all nest components
-    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
-    fontWeight: 'bold',
+    paddingVertical: 12,
   },
   textInputContainer: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
   },
   textInput: {
+    // Apply fontFamily to all nest components
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
+    fontWeight: 'bold',
     fontSize: 14,
+    lineHeight: 16,
     color: COLORS.lightblue,
     width: '100%',
   },
   label: {
     fontSize: 10,
+    lineHeight: 12,
     color: COLORS.gray,
     marginVertical: 6
   },

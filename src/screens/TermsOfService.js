@@ -59,6 +59,7 @@ var styles = StyleSheet.create({
   },
   text: {
     fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
+    fontWeight: '300',
     fontSize: 14,
     lineHeight: 16,
   },
