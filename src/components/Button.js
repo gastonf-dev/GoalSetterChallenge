@@ -11,8 +11,9 @@ import {
   TouchableOpacity,
   StyleSheet,
   Text,
+  Platform,
 } from 'react-native';
-import COLORS from '../../styles/Colors';
+import COLORS from '../styles/Colors';
 
 type Props = {
   title: string,
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   buttonText: {
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontSize: 12,
     textAlign: 'center',
     color: 'white',

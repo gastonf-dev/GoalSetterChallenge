@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "./node_modules/jest/bin/jest.js",
     "lint": "eslint .",
     "flow": "flow"
   },

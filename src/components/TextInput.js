@@ -10,6 +10,7 @@ import {
   View,
   TextInput as TextInputRN,
   Image,
+  Platform,
 } from 'react-native';
 import COLORS from '../styles/Colors';
 
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
 
     paddingVertical: 6,
     // Apply fontFamily to all nest components
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontWeight: 'bold',
   },
   textInputContainer: {

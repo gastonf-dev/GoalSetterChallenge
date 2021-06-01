@@ -6,7 +6,7 @@
 import React, {useState} from 'react';
 import type {Node} from 'react';
 
-import {Dimensions, Image, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, Image, Platform, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const IMAGE_ILLUSTRATION = require('../assets/images/illustrationMoney.png');
@@ -58,7 +58,7 @@ var styles = StyleSheet.create({
     padding: 24,
   },
   text: {
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontSize: 14,
     lineHeight: 16,
   },

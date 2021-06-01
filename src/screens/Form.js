@@ -2,11 +2,12 @@
  * @flow stric-local
  * @format
  */
-import React from 'react';
+import React, {useState} from 'react';
 import type {Node} from 'react';
 import {
   ActivityIndicator,
   ImageBackground,
+  Platform,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -19,14 +20,14 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 
-import TextInput from '../components/TextInput';
-import Button from '../components/button/Button';
-import COLORS from '../styles/Colors';
-import Link from '../components/Link';
-import {useNavigation} from '@react-navigation/core';
 import Header from '../components/Header';
+import TextInput from '../components/TextInput';
+import Button from '../components/Button';
+import Link from '../components/Link';
+
+import COLORS from '../styles/Colors';
+import {useNavigation} from '@react-navigation/core';
 import addParentApi from '../api/Parent';
-import {useState} from 'react';
 
 const FORM_SCHEMA = Yup.object().shape({
   firstname: Yup.string().required(),
@@ -50,7 +51,7 @@ const Form = (): Node => {
     setIsLoading(true);
     const result = await addParentApi(values);
     setIsLoading(false);
-    navigation.navigate("LinkBank");
+    navigation.navigate('LinkBank');
   };
 
   if (isLoading) {
@@ -61,7 +62,7 @@ const Form = (): Node => {
     );
   } else {
     return (
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView contentContainerStyle={styles.container}>
         <Header
           title="Create Your Account"
           subtitle="You can be a parent, godparent, grandparent or even a favorite aunt. We’ll add the kids after!"
@@ -162,17 +163,22 @@ const Form = (): Node => {
 export default Form;
 
 const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+  },
   formContainer: {
     flex: 1,
   },
   bottomContainer: {
     flex: 1,
+    justifyContent: 'flex-end',
+    marginBottom: 24,
   },
   adviceContainer: {
     marginHorizontal: 24,
   },
   adviceText: {
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontSize: 14,
     textAlign: 'center',
     opacity: 0.4,
