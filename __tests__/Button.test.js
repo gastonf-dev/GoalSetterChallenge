@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 
 import {render, fireEvent, waitFor} from '@testing-library/react-native';
 
-import Button from '../src/components/button/Button';
+import Button from '../src/components/Button';
 
 describe('<Button />', () => {
   test('render button enable and short', () => {

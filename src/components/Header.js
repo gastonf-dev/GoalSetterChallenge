@@ -6,7 +6,7 @@
 import React from 'react';
 import type {Node} from 'react';
 
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, Platform, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 const IMAGE_HEADER = require('../assets/images/background.png');
@@ -35,7 +35,7 @@ var styles = StyleSheet.create({
     padding: 24,
   },
   title: {
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontWeight: 'bold',
     fontSize: 20,
     lineHeight: 24,
@@ -43,7 +43,7 @@ var styles = StyleSheet.create({
     color: 'white',
   },
   subtitle: {
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontSize: 14,
     lineHeight: 16,
     textAlign: 'center',

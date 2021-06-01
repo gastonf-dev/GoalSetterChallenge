@@ -5,7 +5,7 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import COLORS from '../styles/Colors';
 
 type Props = {
@@ -24,7 +24,7 @@ export default Link;
 
 const styles = StyleSheet.create({
   link: {
-    fontFamily: 'AvenirLTStd',
+    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
     fontSize: 14,
     color: COLORS.lightblue,
   },
