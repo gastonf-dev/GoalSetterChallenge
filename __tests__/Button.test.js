@@ -67,4 +67,20 @@ describe('<Button />', () => {
       expect(ON_PRESS_BUTTON).toHaveBeenCalled();
     });
   });
+
+  test('render button disable and short and press it', async () => {
+    const ON_PRESS_BUTTON = jest.fn();
+    const DISABLE_LARGE = {
+      title: 'Test button',
+      onPress: ON_PRESS_BUTTON,
+      disabled: true,
+      large: true,
+    };
+
+    const {getByTestId} = render(<Button {...DISABLE_LARGE} />);
+    fireEvent.press(getByTestId('button'));
+    await waitFor(() => {
+      expect(ON_PRESS_BUTTON).not.toHaveBeenCalled();
+    });
+  });
 });
