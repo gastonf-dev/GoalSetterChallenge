@@ -7,7 +7,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import HeaderGradient from './src/components/HeaderGradient';
 
 // Screens
-import Form from './src/screens/Form';
+import CreateAccount from './src/screens/CreateAccount';
 import TermsOfService from './src/screens/TermsOfService';
 import Header from './src/components/Header';
 import LinkBank from './src/screens/LinkBank';
@@ -23,8 +23,8 @@ function App() {
             headerBackTitleVisible: false,
           }}>
           <Stack.Screen
-            name="Form"
-            component={Form}
+            name="CreateAccount"
+            component={CreateAccount}
             options={{
               headerShown: false,
             }}

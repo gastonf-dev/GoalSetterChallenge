@@ -43,7 +43,7 @@ const FORM_INITIAL_VALUES = {
   password: '',
 };
 
-const Form = (): Node => {
+const CreateAccount = (): Node => {
   const [isLoading, setIsLoading] = useState(false);
   const navigation = useNavigation();
 
@@ -162,7 +162,7 @@ const Form = (): Node => {
   }
 };
 
-export default Form;
+export default CreateAccount;
 
 const styles = StyleSheet.create({
   container: {
