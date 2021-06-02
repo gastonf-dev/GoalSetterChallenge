@@ -5,10 +5,12 @@
 
 
 import React from 'react';
+import type {Node} from 'react';
+
 import {StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const HeaderGradient = () => {
+const HeaderGradient = (): Node => {
   return (
     <LinearGradient
       colors={['#8D24C4', '#500F71']}

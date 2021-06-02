@@ -4,10 +4,12 @@
  */
 
 import React from 'react';
+import type {Node} from 'react';
+
 import {StyleSheet, View, ActivityIndicator} from 'react-native';
 import COLORS from '../styles/Colors';
 
-const Loading = () => {
+const Loading = (): Node=> {
   return (
     <View style={styles.loadingContainer}>
       <ActivityIndicator color={COLORS.lightblue} size="large" />
