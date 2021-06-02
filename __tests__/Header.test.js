@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Header from '../src/components/Header';
-jest.mock('react-native-linear-gradient', () => 'LinearGradient');
 describe('<Header />', () => {
   test('render header with title and subtitle', () => {
     const PROPS = {

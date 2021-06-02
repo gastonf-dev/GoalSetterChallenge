@@ -7,7 +7,6 @@ import React from 'react';
 import type {Node} from 'react';
 
 import {ImageBackground, Platform, StyleSheet, Text, View} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 const IMAGE_HEADER = require('../assets/images/background.png');
 
