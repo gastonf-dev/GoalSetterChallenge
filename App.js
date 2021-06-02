@@ -1,53 +1,15 @@
 import * as React from 'react';
 import {View, Text, StyleSheet, Platform} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
 
 import {SafeAreaView} from 'react-native-safe-area-context';
-import HeaderGradient from './src/components/HeaderGradient';
-
-// Screens
-import CreateAccount from './src/screens/CreateAccount';
-import TermsOfService from './src/screens/TermsOfService';
-import Header from './src/components/Header';
-import LinkBank from './src/screens/LinkBank';
-
-const Stack = createStackNavigator();
+import MainNavigator from './src/navigation/MainNavigator';
 
 function App() {
   return (
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerBackTitleVisible: false,
-          }}>
-          <Stack.Screen
-            name="CreateAccount"
-            component={CreateAccount}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="LinkBank"
-            component={LinkBank}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="TermsOfService"
-            component={TermsOfService}
-            options={{
-              title: 'Terms of service',
-              headerBackground: () => <HeaderGradient />,
-              headerTitleStyle: styles.headerTitle,
-              headerTitleAlign: 'center',
-              headerTintColor: 'white',
-            }}
-          />
-        </Stack.Navigator>
+        <MainNavigator />
       </NavigationContainer>
     </SafeAreaView>
   );
@@ -56,13 +18,6 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  headerTitle: {
-    fontFamily: Platform.OS === 'ios' ? 'Avenir LT Std' : 'AvenirLTStd',
-    fontWeight: 'bold',
-    fontSize: 20,
-    lineHeight: 24,
-    color: 'white',
   },
 });
 

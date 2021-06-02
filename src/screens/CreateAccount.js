@@ -5,7 +5,7 @@
 import React, {useState} from 'react';
 import type {Node} from 'react';
 import {
-  ActivityIndicator,
+  Alert,
   ImageBackground,
   Platform,
   StyleSheet,
@@ -24,6 +24,7 @@ import Header from '../components/Header';
 import TextInput from '../components/TextInput';
 import Button from '../components/Button';
 import Link from '../components/Link';
+import Loading from '../components/Loading';
 
 import COLORS from '../styles/Colors';
 import {useNavigation} from '@react-navigation/core';
@@ -49,17 +50,18 @@ const CreateAccount = (): Node => {
 
   const addParent = async values => {
     setIsLoading(true);
-    const result = await addParentApi(values);
-    setIsLoading(false);
-    navigation.navigate('LinkBank');
+    try {
+      const result = await addParentApi(values);
+      setIsLoading(false);
+      navigation.navigate('LinkBank');
+    } catch (error) {
+      setIsLoading(false);
+      Alert.alert('Error', 'A parent was not created');
+    }
   };
 
   if (isLoading) {
-    return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <ActivityIndicator color={COLORS.lightblue} size="large" />
-      </View>
-    );
+    return <Loading />;
   } else {
     return (
       <KeyboardAwareScrollView contentContainerStyle={styles.container}>
