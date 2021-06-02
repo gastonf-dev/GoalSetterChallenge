@@ -6,12 +6,13 @@ exports[`<Link /> render link 1`] = `
   style={
     Object {
       "color": "#17BFDD",
-      "fontFamily": "AvenirLTStd",
+      "fontFamily": "Avenir LT Std",
       "fontSize": 14,
     }
   }
   testID="link"
 >
+  
   Test link
 </Text>
 `;

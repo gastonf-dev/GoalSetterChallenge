@@ -38,10 +38,10 @@ exports[`<Header /> render header with title and subtitle 1`] = `
     style={
       Object {
         "color": "white",
-        "fontFamily": "AvenirLTStd",
+        "fontFamily": "Avenir LT Std",
         "fontSize": 20,
         "fontWeight": "bold",
-        "lineHeight": 24,
+        "lineHeight": 23,
         "textAlign": "center",
       }
     }
@@ -52,7 +52,7 @@ exports[`<Header /> render header with title and subtitle 1`] = `
     style={
       Object {
         "color": "white",
-        "fontFamily": "AvenirLTStd",
+        "fontFamily": "Avenir LT Std",
         "fontSize": 14,
         "lineHeight": 16,
         "marginTop": 12,
@@ -103,10 +103,10 @@ exports[`<Header /> render header with title only 1`] = `
     style={
       Object {
         "color": "white",
-        "fontFamily": "AvenirLTStd",
+        "fontFamily": "Avenir LT Std",
         "fontSize": 20,
         "fontWeight": "bold",
-        "lineHeight": 24,
+        "lineHeight": 23,
         "textAlign": "center",
       }
     }
