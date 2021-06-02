@@ -2,7 +2,7 @@
  * @flow stric-local
  * @format
  */
-type PARENT_DATA = {
+export type PARENT_DATA = {
   firstname: string,
   lastname: string,
   email: string,
@@ -15,7 +15,13 @@ const addParentApi = ({
   password,
 }: PARENT_DATA): Promise<string> => {
   return new Promise((resolve, reject) => {
-    return setTimeout(() => resolve('HTTP_OK'), 4000);
+    return setTimeout(() => {
+      if (firstname.toLowerCase().startsWith('error')){
+      reject('HTTP_ERROR')
+      } else {
+      resolve('HTTP_OK');
+      }
+    }, 3000)
   });
 };
 
