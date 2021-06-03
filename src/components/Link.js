@@ -5,12 +5,12 @@
 
 import React from 'react';
 import type {Node} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text} from 'react-native';
 import COLORS from '../styles/Colors';
 
 type Props = {
   title: string,
-  onPress: function,
+  onPress: () => mixed,
 };
 const Link = ({title, onPress}: Props): Node => {
   return (

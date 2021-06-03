@@ -6,18 +6,12 @@
 import React from 'react';
 import type {Node} from 'react';
 
-import {
-  Button as ButtonRN,
-  TouchableOpacity,
-  StyleSheet,
-  Text,
-  Platform,
-} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, Platform} from 'react-native';
 import COLORS from '../styles/Colors';
 
 type Props = {
   title: string,
-  onPress: function,
+  onPress: () => mixed,
   disabled?: boolean,
   large?: boolean,
 };

@@ -6,7 +6,7 @@
 import React from 'react';
 import type {Node} from 'react';
 
-import {ImageBackground, Platform, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, Platform, StyleSheet, Text} from 'react-native';
 
 const IMAGE_HEADER = require('../assets/images/background.png');
 
