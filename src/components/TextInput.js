@@ -57,7 +57,9 @@ const TextInput = ({
       <Image source={ICONS[type]} style={styles.icon} />
       <View style={styles.textInputContainer}>
         {isFocused || value.length !== 0 ? (
-          <Text style={styles.label}>{label}</Text>
+          <Text style={styles.label} testID="label">
+            {label}
+          </Text>
         ) : null}
         <TextInputRN
           style={styles.textInput}
@@ -107,7 +109,7 @@ const styles = StyleSheet.create({
     fontSize: 10,
     lineHeight: 12,
     color: COLORS.gray,
-    marginVertical: 6
+    marginVertical: 6,
   },
   icon: {
     marginRight: 12,
