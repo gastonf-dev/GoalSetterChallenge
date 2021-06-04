@@ -52,12 +52,11 @@ const CreateAccount = (): Node => {
     setIsLoading(true);
     try {
       const result = await addParentApi(values);
-      setIsLoading(false);
       navigation.navigate('LinkBank');
     } catch (error) {
-      setIsLoading(false);
       Alert.alert('Error', 'A parent was not created');
     }
+    setIsLoading(false);
   };
 
   if (isLoading) {
