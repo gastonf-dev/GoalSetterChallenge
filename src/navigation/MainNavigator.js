@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Image} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import HeaderGradient from '../components/HeaderGradient';
@@ -9,6 +9,8 @@ import LinkBank from '../screens/LinkBank';
 import TermsOfService from '../screens/TermsOfService';
 
 const Stack = createStackNavigator();
+
+const backImage = require('../assets/images/chevronLeft.png');
 
 export default function MainNavigator() {
   return (
@@ -39,6 +41,7 @@ export default function MainNavigator() {
           headerTitleStyle: styles.headerTitle,
           headerTitleAlign: 'center',
           headerTintColor: 'white',
+          headerBackImage: ({tintColor}) => <Image source={backImage} />,
         }}
       />
     </Stack.Navigator>
