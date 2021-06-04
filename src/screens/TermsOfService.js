@@ -3,11 +3,10 @@
  * @format
  */
 
-import React, {useState} from 'react';
+import React from 'react';
 import type {Node} from 'react';
 
-import {Dimensions, Image, Platform, StyleSheet, Text, View} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {Image, Platform, StyleSheet, Text, View} from 'react-native';
 
 const IMAGE_ILLUSTRATION = require('../assets/images/illustrationMoney.png');
 const IMAGE_FLYING_MONEY = require('../assets/images/flyingMoney.png');

@@ -4,17 +4,7 @@
  */
 import React, {useState} from 'react';
 import type {Node} from 'react';
-import {
-  Alert,
-  ImageBackground,
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import {Alert, Platform, StyleSheet, Text, View} from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 import {Formik} from 'formik';
@@ -26,7 +16,6 @@ import Button from '../components/Button';
 import Link from '../components/Link';
 import Loading from '../components/Loading';
 
-import COLORS from '../styles/Colors';
 import {useNavigation} from '@react-navigation/core';
 import addParentApi from '../api/Parent';
 

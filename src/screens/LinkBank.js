@@ -23,6 +23,9 @@ const LinkBank = (): Node => {
       e.preventDefault();
       return;
     });
+    return () => {
+      navigation.removeListener('beforeRemove');
+    };
   }, [navigation]);
 
   return (
