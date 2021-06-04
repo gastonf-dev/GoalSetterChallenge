@@ -1,83 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextInput /> render input with value 1`] = `
-<View
-  style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "borderBottomColor": "#D8D8D8",
-        "borderBottomWidth": 1,
-        "flexDirection": "row",
-        "marginHorizontal": 38,
-        "marginVertical": 12,
-        "paddingVertical": 12,
-      },
-      null,
-      null,
-    ]
-  }
->
-  <Image
-    source={
-      Object {
-        "testUri": "../../../src/assets/images/person.png",
-      }
-    }
-    style={
-      Object {
-        "marginRight": 12,
-        "tintColor": "#D8D8D8",
-      }
-    }
-  />
-  <View
-    style={
-      Object {
-        "flexDirection": "column",
-        "justifyContent": "flex-start",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "#D8D8D8",
-          "fontSize": 10,
-          "lineHeight": 12,
-          "marginVertical": 6,
-        }
-      }
-    >
-      Test label
-    </Text>
-    <TextInput
-      allowFontScaling={true}
-      autoCapitalize="words"
-      keyboardType="default"
-      onBlur={[Function]}
-      onChangeText={[MockFunction]}
-      onFocus={[Function]}
-      placeholder="Test placeholder"
-      rejectResponderTermination={true}
-      secureTextEntry={false}
-      style={
-        Object {
-          "color": "#17BFDD",
-          "fontFamily": "Avenir LT Std",
-          "fontSize": 14,
-          "fontWeight": "bold",
-          "lineHeight": 16,
-          "width": "100%",
-        }
-      }
-      underlineColorAndroid="transparent"
-      value="Test value"
-    />
-  </View>
-</View>
-`;
-
 exports[`<TextInput /> render input without value 1`] = `
 <View
   style={
@@ -114,6 +36,7 @@ exports[`<TextInput /> render input without value 1`] = `
       Object {
         "flexDirection": "column",
         "justifyContent": "flex-start",
+        "width": "100%",
       }
     }
   >
@@ -180,6 +103,7 @@ exports[`<TextInput /> render input without value 2`] = `
       Object {
         "flexDirection": "column",
         "justifyContent": "flex-start",
+        "width": "100%",
       }
     }
   >
