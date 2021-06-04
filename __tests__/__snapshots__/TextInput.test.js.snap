@@ -36,6 +36,7 @@ exports[`<TextInput /> render input without value 1`] = `
       Object {
         "flexDirection": "column",
         "justifyContent": "flex-start",
+        "width": "100%",
       }
     }
   >
@@ -102,6 +103,7 @@ exports[`<TextInput /> render input without value 2`] = `
       Object {
         "flexDirection": "column",
         "justifyContent": "flex-start",
+        "width": "100%",
       }
     }
   >

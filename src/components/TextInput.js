@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
   textInputContainer: {
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    width: '100%',
   },
   textInput: {
     // Apply fontFamily to all nest components
